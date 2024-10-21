@@ -28,50 +28,88 @@
         </div>
     </nav>
 
-    <div class="dashboard">
-        <header>
-           
-            <nav>
-                <ul>
-                    <li><a href="#income">Income</a></li>
-                    <li><a href="#expenses">Expenses</a></li>
-                    <li><a href="#savings">Savings</a></li>
-                    <li><a href="#goals">Goals</a></li>
-                    <li><a href="#history">History</a></li>
-                </ul>
-            </nav>
-        </header>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
         
-        <main>
-            <section class="overview">
-                <div class="card total-income">Total Income: $X</div>
-                <div class="card total-expenses">Total Expenses: $Y</div>
-                <div class="card total-savings">Total Savings: $Z</div>
-                <div class="card remaining-balance">Remaining Balance: $W</div>
-            </section>
-            
-            <section class="charts">
-                <h2>Visual Insights</h2>
-                <div class="chart pie-chart">Pie Chart: Expense Distribution</div>
-                <div class="chart bar-chart">Bar Chart: Income vs. Expenses</div>
-            </section>
-            
-            <section class="recent-activity">
-                <h2>Recent Transactions</h2>
-                <ul>
-                    <li>Transaction 1: Details...</li>
-                    <li>Transaction 2: Details...</li>
-                    <li>Transaction 3: Details...</li>
-                </ul>
-            </section>
-        </main>
-        
-        <footer>
-            <div class="notifications">
-                Upcoming bills due soon: <strong>$Amount</strong>
+          <ul class="sidebar-menu">
+            <li><a href="#"><img src="dashbb.png" alt="Dashboard"></a></li>
+            <li><a href="#"><img src="incomedashb.png" alt="Income"></a></li>
+            <li><a href="#"><img src="exdashb.png" alt="Expenses"></a></li>
+            <li><a href="#"><img src="saving.png" alt="Savings"></a></li>
+            <li><a href="#"><img src="goals.png" alt="Goals"></a></li>
+            <li><a href="#"><img src="history.png" alt="History" class ="history"></a></li>
+          </ul>
+        </div>
+    
+        <!-- Instruction Section (Image + Message) -->
+        <div class="instruction-section">
+            <div class="instruction-image">
+              <div class="circle-image">
+                <img src="https://i.pinimg.com/564x/23/e4/23/23e423b43fb0c54a948f978abeba4143.jpg" alt="Guide Image">
+                
+              </div>
             </div>
-        </footer>
+            <div class="instruction-message">
+              <h2>Manage Your Finances</h2>
+              <p>Track your budget, control expenses, and grow savings.</p>
+        
+            </div>
+          </div>
+          
+    
+       <!-- Main Dashboard Section -->
+<div class="dashboard-main">
+    <div class="left-section">
+        <!-- Upcoming Events Section -->
+        <div class="upcoming-events">
+            <h3>Upcoming Events</h3>
+            <div class="event">
+                <img src="path/to/event-image1.png" alt="Event 1">
+                <div class="event-details">
+                    <h4>Budget Overview</h4>
+                    <p>Track your income and expenses</p>
+                </div>
+            </div>
+            <div class="event">
+                <img src="path/to/event-image2.png" alt="Event 2">
+                <div class="event-details">
+                    <h4>Savings Review</h4>
+                    <p>Analyze your savings progress</p>
+                </div>
+            </div>
+            <div class="event">
+                <img src="path/to/event-image3.png" alt="Event 3">
+                <div class="event-details">
+                    <h4>Goals Update</h4>
+                    <p>Check your financial goals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activities Section -->
+        <div class="activities">
+            <h3>Activities</h3>
+            <div class="activity-chart">
+                <img src="path/to/activity-chart.png" alt="Chart">
+            </div>
+        </div>
     </div>
+
+    <!-- Calendar & Schedule Section -->
+    <div class="calendar-schedule">
+        <div class="calendar">
+            <h3>Calendar</h3>
+            <p>Pick a date to adjust your budget</p>
+            <!-- Add calendar functionality here -->
+        </div>
+        <div class="schedule">
+            <h3>Schedule</h3>
+            <p>Adjust your budget plan</p>
+        </div>
+    </div>
+</div>
+
     
     <script src="./js/dashboard.js"></script>
 </body>
