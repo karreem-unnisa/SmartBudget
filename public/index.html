@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">   
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>SMART BUDGET</title>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-image">
+            <span class="website-name">SMARTbUDGET</span>
+        </div>
+        <ul class="nav-items">  
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="income-expense.html" class="nav-link">Income & Expense</a></li>
+            <li><a href="budgeting.html" class="nav-link">Budgeting</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            <li><a href="reports.html" class="nav-link">Reports</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="overlay"></div> <!-- Transparent overlay -->
+        <div class="hero-content">
+            <h1>WELCOME TO SMARTbUDGET</h1>
+            <p>Where you can tailor your budget to your needs and goals.</p>
+        </div>
+    </section>
+
+    <section class="about-smartbudget">
+        <div class="about-content">
+            <h2>Manage your Finaces with SMARTbUDGET</h2>
+            <p>
+                SMARTbUDGET is your go-to solution for managing your finances effortlessly. 
+                With features like income tracking, expense monitoring, and budgeting tools, 
+                you can gain better control of your financial health. 
+                Start your journey towards smarter financial decisions today!
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="features.png" alt="SmartBudget" /> <!-- Replace with your image URL -->
+        </div>
+    </section>    
+
+    <section class="cards-section">
+        <div class="card">
+            <img src="income.png" alt="Card 1" class="card-image"> <!-- Replace with your image URL -->
+            <h3 class="card-title">Log Income and Expense accordingly</h3>
+            <p class="card-description">Users can log different income sources. This will help users understand their total monthly income. They can also categorize their expenses to see where their money is going.</p>
+        </div>
+        <div class="card">
+            <img src="budget.png" alt="Card 2" class="card-image"> <!-- Replace with your image URL -->
+            <h3 class="card-title">Track Your Budget and Savings</h3>
+            <p class="card-description">Easily monitor your earnings from various sources. Keep track of all your expenses effortlessly. Set your budgets and stick to them with ease.</p>
+        </div>
+        <div class="card">
+            <img src="budgetset.png" alt="Card 3" class="card-image"> <!-- Replace with your image URL -->
+            <h3 class="card-title">Analyze your Income and Expense</h3>
+            <p class="card-description">The Reports and Analytics feature aims to provide users with insights into their financial health, spending habits, and overall budget performance.</p>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-description">SMARTbUDGET allows users to log their income and expenses, automatically categorizing transactions to provide a clear overview of their financial health. Users can set budgets, track spending trends, and generate detailed reports, enabling them to make informed financial decisions and reach their savings goals.</p>
+        
+        <div class="step">
+            <div class="step-content">
+                <h3 class="step-number" style="color: #edd1a5;">#LOG AND TRACK</h3> <!-- Step number color -->
+                <p class="step-description" style="color: #333;">In SMARTbUDGET, users can easily log their income and expenses by inputting transaction details and categorizing them for better organization. The app tracks spending in real time, providing insights into financial habits and helping users stay within their budget.</p> <!-- Description color -->
+            </div>
+            <img src="track.png" alt="Step 1 Image" class="step-image"> <!-- Replace with your image URL -->
+        </div>
+    
+        <div class="step">
+            <img src="analyze.png" alt="Step 2 Image" class="step-image"> <!-- Replace with your image URL -->
+            <div class="step-content">
+                <h3 class="step-number" style="color: #edd1a5;">#ANALYZE AND MONITOR</h3> <!-- Step number color -->
+                <p class="step-description" style="color: #333;">SMARTbUDGET analyzes users' financial data to identify spending patterns and trends, offering insights into areas where they can save. The app continuously monitors budget performance, alerting users to overspending and helping them stay on track with their financial goals.</p> <!-- Description color -->
+            </div>
+        </div>
+    </section>
+    
+    <section class="get-started-section">
+        <img src="get started.gif" alt="Get Started Image" class="get-started-image"> <!-- Replace with your image URL -->
+        <div class="get-started-content">
+            <h2 class="get-started-title">Get Started with SMARTbUDGET</h2>
+            <p class="get-started-description">Discover a seamless way to manage your finances with SMARTbUDGET, transforming your experience with ease and efficiency. Get personalized insights, explore endless possibilities, and make the most out of your time with us.</p>
+            <p class="get-started-description">Join us to manage your finances better and take control of your budgeting. Why wait? Let’s unlock new possibilities together. Click the button below to start your journey!</p>
+            <p class="get-started-description">Why wait? Let’s unlock new possibilities together. Click the button below to start your journey!</p>
+            <a href="settings.html" class="get-started-button">Get Started</a> <!-- Link to settings -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-left">
+                <h2 class="footer-title">Stay on Top of Your Finances</h2>
+                <p class="footer-subtitle">Manage your income and budgeting effortlessly.</p>
+                <p class="footer-text">Income & Expense Tracking and Budgeting Tools for Smart Financial Management.</p>
+            </div>
+            <img src="footer.png" alt="Footer Image" class="footer-image"> <!-- Replace with your image URL -->
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="footer-section">
+                <h3 class="footer-section-title">SMARTBUDGET</h3>
+                <p class="footer-section-description">Innovative solutions to manage your finances efficiently.</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-section-title">Contact Us</h3>
+                <p class="footer-section-description">Email: support@smartbudget.com</p>
+                <p class="footer-section-description">Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-section-title">Quick Links</h3>
+                <p class="footer-section-description"><a href="income-expense.html">Income & Expense</a></p>
+                <p class="footer-section-description"><a href="budgeting.html">Budgeting</a></p>
+                <p class="footer-section-description"><a href="settings.html">Settings</a></p>
+                <p class="footer-section-description"><a href="privacy-policy.html">Privacy Policy</a></p>
+               
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-section-title">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="fb.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#" class="social-icon"><img src="insta.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="./js/index.js"></script>
+</body>
+</html>

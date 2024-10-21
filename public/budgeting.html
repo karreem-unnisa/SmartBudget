@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/budgeting.css">
+    <title>SMARTbUDGET - Budgeting</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-image">
+            <span class="website-name">SMARTbUDGET</span>
+        </div>
+        <ul class="nav-items">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="income-expense.html" class="nav-link">Income & Expense</a></li>
+            <li><a href="#" class="nav-link  active">Budgeting</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            <li><a href="reports.html" class="nav-link">Reports</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <div class="budget-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <h2>Budget Menu</h2>
+            <ul class="tabs">
+                <li><a href="#">Monthly Overview</a></li>
+                <li><a href="#" data-target="income">Income</a></li>
+                <li><a href="#" data-target="expenses">Expenses</a></li>
+                <li><a href="#" data-target="savings">Savings</a></li>
+                <li><a href="#" data-target="goals">Goals</a></li>
+                <li><a href="#" data-target="history">History</a></li>
+
+            </ul>
+        </div>
+
+        <!-- Toggle button for sidebar on mobile -->
+        <button class="toggle-btn" id="toggleSidebar">&#9776;</button>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>Start Budgeting With SMARTbUDGET</h1>
+
+            <!-- Totals Section -->
+            <div class="totals-section">
+                <div class="total-card income-total">
+                    <h3>Total Income</h3>
+                    <p>$0</p>
+                </div>
+                <div class="total-card expense-total">
+                    <h3>Total Expenses</h3>
+                    <p>$0</p>
+                </div>
+                <div class="total-card savings-total">
+                    <h3>Total Savings</h3>
+                    <p>$0</p>
+                </div>
+                <div class="total-card balance-total">
+                    <h3>Remaining Balance</h3>
+                    <p>$0</p>
+                </div>
+            </div>
+
+<!-- History Overlay -->
+<div id="history-overlay" class="overlay">
+    <div class="overlay-content">
+        <h2>Transaction History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Month</th>
+                    <th>Income</th>
+                    <th>Expenses</th>
+                    <th>Savings</th>
+                    <th>Goals</th>
+                    <th>Remaining Balance</th>
+                </tr>
+            </thead>
+            <tbody id="history-body">
+                <!-- History data will be populated here -->
+            </tbody>
+        </table>
+        <button class="btn close-overlay">Close</button>
+    </div>
+</div>
+
+
+
+            <!-- Transaction Forms -->
+            <div class="transaction-forms">
+                <form id="income-form">
+                    <h2>Add Income</h2>
+                    <label for="income-amount">Amount:</label>
+                    <input type="number" id="income-amount" placeholder="Enter income amount" required>
+                    <label for="income-date">Date:</label>
+                    <input type="date" id="income-date" required>
+                    <button type="submit" class="btn">Add Income</button>
+                </form>
+
+                <form id="expense-form">
+                    <h2>Add Expense</h2>
+                    <label for="expense-amount">Amount:</label>
+                    <input type="number" id="expense-amount" placeholder="Enter expense amount" required>
+                    <label for="expense-date">Date:</label>
+                    <input type="date" id="expense-date" required>
+                    <button type="submit" class="btn">Add Expense</button>
+                </form>
+
+                <!-- Savings Form -->
+                <form id="savings-form">
+                    <h2>Add Savings</h2>
+                    <label for="savings-amount">Amount:</label>
+                    <input type="number" id="savings-amount" placeholder="Enter savings amount" required>
+                    <label for="savings-date">Date:</label>
+                    <input type="date" id="savings-date" required>
+                    <button type="submit" class="btn">Add Savings</button>
+                </form>
+
+                <!-- Goals Form -->
+                <form id="goals-form">
+                    <h2>Add Goals</h2>
+                    <label for="goals-amount">Amount:</label>
+                    <input type="number" id="goals-amount" placeholder="Enter goal amount" required>
+                    <label for="goals-date">Date:</label>
+                    <input type="date" id="goals-date" required>
+                    <button type="submit" class="btn">Add Goals</button>
+                </form>
+
+                <!-- Overlay for displaying details -->
+                <div id="overlay" class="overlay">
+                    <div class="overlay-content">
+                        <span class="close" id="close-overlay">&times;</span>
+                        <h2 id="overlay-title">Details</h2>
+                        <ul id="overlay-details"></ul>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <h2>Budget Overview</h2>
+                <div class="chart-placeholder">Pie Chart (Income vs Expenses)</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/budgeting.js"></script>
+</body>
+
+</html>

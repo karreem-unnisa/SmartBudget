@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>SMARTbUDGET - Dashboard</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-image">
+            <span class="website-name">SMARTbUDGET</span>
+        </div>
+        <ul class="nav-items">  
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="income-expense.html" class="nav-link">Income & Expense</a></li>
+            <li><a href="budgeting.html" class="nav-link">Budgeting</a></li>
+            <li><a href="#" class="nav-link active">Dashboard</a></li>
+            <li><a href="reports.html" class="nav-link">Reports</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <header>
+           
+            <nav>
+                <ul>
+                    <li><a href="#income">Income</a></li>
+                    <li><a href="#expenses">Expenses</a></li>
+                    <li><a href="#savings">Savings</a></li>
+                    <li><a href="#goals">Goals</a></li>
+                    <li><a href="#history">History</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="overview">
+                <div class="card total-income">Total Income: $X</div>
+                <div class="card total-expenses">Total Expenses: $Y</div>
+                <div class="card total-savings">Total Savings: $Z</div>
+                <div class="card remaining-balance">Remaining Balance: $W</div>
+            </section>
+            
+            <section class="charts">
+                <h2>Visual Insights</h2>
+                <div class="chart pie-chart">Pie Chart: Expense Distribution</div>
+                <div class="chart bar-chart">Bar Chart: Income vs. Expenses</div>
+            </section>
+            
+            <section class="recent-activity">
+                <h2>Recent Transactions</h2>
+                <ul>
+                    <li>Transaction 1: Details...</li>
+                    <li>Transaction 2: Details...</li>
+                    <li>Transaction 3: Details...</li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="notifications">
+                Upcoming bills due soon: <strong>$Amount</strong>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>

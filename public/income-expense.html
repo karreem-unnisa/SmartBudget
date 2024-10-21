@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/income-expense.css">
+    <title>SMARTbUDGET - Income & Expense</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-image">
+            <span class="website-name">SMARTbUDGET</span>
+        </div>
+        <ul class="nav-items">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link active">Income & Expense</a></li>
+            <li><a href="budgeting.html" class="nav-link">Budgeting</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            <li><a href="reports.html" class="nav-link">Reports</a></li>
+            <li><a href="settings.html" class="nav-link">Settings</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="content">
+            <h1>Log your Income and Expenses</h1>
+            <p>Your financial health depends on managing your income and expenses wisely.</p>
+            <p>Income refers to the money you earn, while expenses are what you spend. Tracking them helps you make
+                informed financial decisions.</p>
+            <h4>Track your <a href="#form" style="text-decoration: none;"><b>income and expenses</b></a></h4>
+        </div>
+        <div class="image-container">
+            <img src="inc.png" alt="Financial Planning" class="hero-image">
+        </div>
+    </header>
+
+    <section class="form-section" id="form">
+        <div class="content">
+            <h5>What are you trying to log?</h5>
+            <h1>Try logging your income and expenses</h1>
+            <form class="log-form" id="logForm">
+
+                <label for="type">Type:</label>
+                <select id="type" name="type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="salary">Salary</option>
+                    <option value="freelance">Freelance</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="taxes">Taxes</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required placeholder="Enter description">
+    
+               
+    
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required placeholder="Enter amount" min="0" step="0.01">
+
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes" placeholder="Any additional notes"></textarea>
+
+                <label for="recurring" class="recurring-label">
+                    <input type="checkbox" id="recurring" name="recurring">
+                    <div class="custom-checkbox"></div>
+                    Recurring Transaction
+                </label>
+                
+    
+                <button type="submit" class="btn">Submit</button>
+            </form>
+    
+            <label for="sortBy">Sort by:</label>
+            <select id="sortBy">
+                <option value="newest">Latest</option>
+                <option value="oldest">Oldest</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+                <option value="amountAsc">Amount (Ascending)</option>
+                <option value="amountDesc">Amount (Descending)</option>
+            </select>
+    
+            <button id="viewHistory" class="btn">View Your History</button>
+    
+            <div id="historyTableContainer" class="hidden">
+                <h2>Your History</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                           
+                            <th>Amount</th>
+                            <th>Notes</th>
+                            <th>Recurring</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <!-- Entries will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal for History Table -->
+    <div id="historyModal" class="history-modal hidden">
+        <div class="history-modal-content">
+            <span class="close-btn" id="closeHistory">&larr;</span>
+            <h2>Your History</h2>
+            <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+
+            <table class="history-table">
+                <thead>
+                    <tr>
+                       <th>Date</th>
+                       <th>Type</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            
+                            <th>Amount</th>
+                            <th>Notes</th>
+                            <th>Recurring</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBodyModal">
+                    <!-- Entries will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+   
+      
+    <div class="due-transaction-form" id="due-transaction-form">
+
+        <label for="result">Are you recieving or paying?</label>
+        <select id="result" name="result" required>
+            <option value="recieve">Receive</option>
+            <option value="pay">Pay</option>
+        </select>
+       
+        <label for="amountDue">Amount to Receive/Pay:</label>
+        <input type="number" id="amountDue" placeholder="Enter amount" required>
+    
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" required>
+    
+        <button id="submitDueTransaction" class="btn">Add Transaction</button>
+    </div>
+    
+    <div class="due-transaction-list">
+        <h3>Pending Transactions</h3>
+        <ul id="dueTransactionList"></ul>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="budgeting.html">Budgeting</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>All Rights Reserved</p>
+        </div>
+    </footer>
+    
+
+        <script src="./js/income-expense.js"></script>
+</body>
+
+</html>

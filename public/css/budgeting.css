@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add box-sizing for better layout control */
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1c38d7;
+    color: white;
+    position: fixed; /* Fix the navbar to the top */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure navbar is above other content */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-items {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+.nav-link.active {
+    color: #f39c12; /* Active item color */
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    z-index: 1;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-items {
+        display: none; /* Initially hide the menu */
+        flex-direction: column;
+        position: absolute;
+        width: 100%; /* Full width on mobile */
+        top: 60px; /* Position below navbar */
+        left: 0; /* Align to the left */
+        background-color: #0c2b9a;
+        padding: 10px;
+    }
+
+    .nav-items.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .menu-icon {
+        display: flex; /* Show the menu icon */
+    }
+}
+
+.budget-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #2b6cb0;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 50px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.totals-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.total-card {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.income-total {
+    background-color: #28a745;
+    color: white;
+}
+
+.expense-total {
+    background-color: #e63946;
+    color: white;
+}
+
+.savings-total {
+    background-color: #ffb703;
+    color: white;
+}
+
+.balance-total {
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.transaction-forms {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.transaction-forms form {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-forms form h2 {
+    margin-bottom: 15px;
+}
+
+.transaction-forms form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.transaction-forms form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.transaction-forms form .btn {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.transaction-forms form .btn:hover {
+    background-color: #265a9b;
+}
+
+.charts-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.charts-section h2 {
+    margin-bottom: 15px;
+}
+
+.chart-placeholder {
+    background-color: #ddd;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 18px;
+}
+
+/* Sidebar Toggle Button */
+.toggle-btn {
+    display: none; /* Hidden by default */
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    z-index: 100;
+}
+
+.toggle-btn:hover {
+    font-size: large;
+    color: black;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .budget-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+     
+    }
+
+    .sidebar h2 {
+        margin-top: 40px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        
+    }
+
+    .toggle-btn {
+        display: block;
+       
+    }
+
+    .main-content {
+        margin-left: 0; /* Prevent shifting on small screens */
+    }
+
+    .main-content.active {
+        margin-left: 250px;
+    }
+}
+
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000; /* Sit on top */
+}
+
+.overlay-content {
+    position: relative;
+    background: #fff; /* White background */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10% auto; /* Center it vertically */
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Max width for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-family: 'Courier New', monospace; /* Vintage font */
+    color: #333; /* Dark color for text */
+}
+
+.tabs {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.tabs li {
+    margin: 10px 0; /* Spacing between items */
+}
+
+.btn {
+    background-color: #5a5a5a; /* Vintage button color */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Button padding */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.btn:hover {
+    background-color: #333; /* Darker on hover */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%; /* Adjusted for responsiveness */
+    width: 90%;
+    max-height: 90%; /* Prevent overflow */
+    overflow-y: auto; /* Add scroll if content exceeds height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Allow word wrapping for long content */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.close-overlay {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    th, td {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+
+    .overlay-content {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .close-overlay {
+        width: 100%; /* Full width button */
+    }
+}
+
+@media (min-width: 600px) {
+    th, td {
+        font-size: 16px; /* Default font size */
+    }
+}

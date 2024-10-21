@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add box-sizing for better layout control */
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1c38d7;
+    color: white;
+    position: fixed; /* Fix the navbar to the top */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure navbar is above other content */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-items {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f39c12; /* Change color on hover */
+}
+
+.nav-link.active {
+    color: #f39c12; /* Active item color */
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    z-index: 1;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-items {
+        display: none; /* Initially hide the menu */
+        flex-direction: column;
+        position: absolute;
+        width: 100%; /* Full width on mobile */
+        top: 60px; /* Position below navbar */
+        left: 0; /* Align to the left */
+        background-color: #0c2b9a;
+        padding: 10px;
+    }
+
+    .nav-items.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .menu-icon {
+        display: flex; /* Show the menu icon */
+    }
+}
+
+
+.container {
+    padding-top: 50px;
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    padding-top: 100px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+   
+    position: relative;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.user-icon {
+    margin-left: auto;
+    padding: 10px;
+    display: flex;
+
+    position: relative;
+}
+
+.user-icon img {
+    width: 40px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto; /* Sidebar height adjusts */
+        order: 1; /* Move sidebar to top */
+    }
+    .content {
+        order: 2; /* Content goes below sidebar */
+        padding: 10px;
+    }
+    .user-icon {
+        order: 3; /* User icon at the bottom */
+        align-self: flex-end;
+    }
+}
